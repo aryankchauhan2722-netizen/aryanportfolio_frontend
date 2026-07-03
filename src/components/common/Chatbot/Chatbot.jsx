@@ -5,9 +5,9 @@ import { GiSparkles } from "react-icons/gi";
 import { FaWandMagicSparkles } from "react-icons/fa6";
 import { FaHandSparkles } from "react-icons/fa";
 import styles from "./Chatbot.module.css";
+
+// chatlog import
 import { sendChatMessage, saveChatLog } from "../../../services/api";
-// Bakckend system call
-import { sendChatMessage } from "../../../services/api";
 
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
