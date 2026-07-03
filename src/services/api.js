@@ -15,3 +15,5 @@ export const getSettings = () => API.get('/settings')
 export const sendChatMessage = (message) => {
     return axios.post('https://aryanportfolio-chatbot-backend.onrender.com/chat' , {message})
 }
+
+export const trackPageVisit = (page) => API.post('/pagevisits',page)

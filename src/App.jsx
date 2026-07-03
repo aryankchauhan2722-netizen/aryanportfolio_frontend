@@ -9,6 +9,8 @@ import Achievements from "./components/sections/Achievements/Achievements";
 import Contact from "./components/sections/Contact/Contact";
 import "./App.css";
 
+import { trackPageVisit } from "./services/api";
+
 // loading ke liye
 import { useEffect, useState } from "react";
 import Loader from "./components/common/Loader/Loader";
@@ -17,6 +19,11 @@ import Loader from "./components/common/Loader/Loader";
 import Chatbot from "./components/common/Chatbot/Chatbot";
 
 const App = () => {
+  //  traking logics
+  useEffect(()=>{
+    trackPageVisit("Home");
+  },[]);
+
   // loading animationke liye
   const [loading, setLoading] = useState(true);
 
