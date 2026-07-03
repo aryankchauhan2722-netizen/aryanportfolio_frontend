@@ -20,13 +20,28 @@ import Chatbot from "./components/common/Chatbot/Chatbot";
 
 const App = () => {
   //  traking logics
-  useEffect(()=>{
-    trackPageVisit("Home");
-  },[]);
-
   useEffect(() => {
-  trackPageVisit("Contact");
-}, []);
+    trackPageVisit("Home");
+  }, []);
+
+  // Existing useEffect (agar hai) - waisa hi rehne do
+
+  // Naya - visit tracking ke liye alag
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          trackPageVisit("Contact");
+          observer.disconnect(); // ek baar track hote hi observer band kar do
+        }
+      },
+      { threshold: 0.3 },
+    );
+
+    if (ref.current) observer.observe(ref.current);
+
+    return () => observer.disconnect();
+  }, []);
 
   // loading animationke liye
   const [loading, setLoading] = useState(true);
