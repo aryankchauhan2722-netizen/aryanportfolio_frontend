@@ -24,10 +24,6 @@ const App = () => {
     trackPageVisit("Home");
   },[]);
 
-  useEffect(() => {
-  trackPageVisit("Contact");
-}, []);
-
   // loading animationke liye
   const [loading, setLoading] = useState(true);
 
