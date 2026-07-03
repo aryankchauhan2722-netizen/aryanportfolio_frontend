@@ -17,3 +17,5 @@ export const sendChatMessage = (message) => {
 }
 
 export const trackPageVisit = (page) => API.post('/pagevisits', {page})
+
+export const saveChatLog = (userMessage, botReply) => API.post('/chatlogs', { userMessage, botReply })

@@ -5,7 +5,7 @@ import { GiSparkles } from "react-icons/gi";
 import { FaWandMagicSparkles } from "react-icons/fa6";
 import { FaHandSparkles } from "react-icons/fa";
 import styles from "./Chatbot.module.css";
-
+import { sendChatMessage, saveChatLog } from "../../../services/api";
 // Bakckend system call
 import { sendChatMessage } from "../../../services/api";
 
@@ -37,6 +37,10 @@ const Chatbot = () => {
       const res = await sendChatMessage(input);
       // bot ka reply screen pe dikhavo
       setMessages([...newMessages, { sender: "bot", text: res.data.reply }]);
+
+      saveChatLog(input, res.data.reply).catch((err) => {
+        console.log("Chat log save failed:", err.message);
+      });
     } catch (error) {
       setMessages([
         ...newMessages,
