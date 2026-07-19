@@ -1,4 +1,3 @@
-import React from "react";
 import { useState, useEffect } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import styles from "./Navbar.module.css";
@@ -57,7 +56,7 @@ const Navbar = () => {
           Hire Me
         </a>
       </div>
-      
+
 
       {/* Mobile mein 3 lines wala hamburger menu! Click karne pe menuOpen toggle hota hai — CSS se animate karenge X shape mein! */}
       <div

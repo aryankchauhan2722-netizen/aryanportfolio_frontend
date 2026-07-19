@@ -3,7 +3,6 @@ import {
   FaGithub,
   FaLinkedin,
   FaInstagram,
-  FaArrowRight,
   FaDownload
 } from "react-icons/fa";
 import aryanImg from "../../../assets/Images/aryan.png";
